@@ -8,89 +8,93 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Villa Camaal luxury design system */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 30 8% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 30 8% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 30 8% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Gold (#D4AF37) */
+    --primary: 43 70% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 43 80% 65%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Brown (#8B7355) */
+    --secondary: 30 24% 44%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent: Blue (#2C5F7C) */
+    --accent: 200 48% 33%;
+    --accent-foreground: 0 0% 100%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 30 15% 95%;
+    --muted-foreground: 30 8% 45%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 43 70% 53%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(43 70% 53%), hsl(43 80% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(43 70% 53% / 0.9), hsl(200 48% 33% / 0.9));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(30 15% 98%));
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(30 8% 20% / 0.15);
+    --shadow-glow: 0 0 40px hsl(43 70% 53% / 0.2);
+    --shadow-card: 0 4px 20px -2px hsl(30 8% 20% / 0.1);
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Dynamic theme variables (set by useTheme hook) */
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: 'Inter', sans-serif;
+    
+    /* Site background (set by useTheme hook) */
+    --site-background: hsl(0 0% 100%);
+    --site-background-image: none;
+    --site-background-opacity: 1;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 30 15% 12%;
+    --foreground: 30 8% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 30 15% 15%;
+    --card-foreground: 30 8% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 30 15% 15%;
+    --popover-foreground: 30 8% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 43 70% 53%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 30 24% 35%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 200 48% 40%;
+    --accent-foreground: 0 0% 100%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 30 15% 20%;
+    --muted-foreground: 30 8% 65%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 30 15% 25%;
+    --input: 30 15% 25%;
+    --ring: 43 70% 53%;
   }
 }
 
@@ -100,6 +104,86 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-secondary;
+    font-family: var(--font-secondary);
+    background: var(--site-background);
+    background-image: var(--site-background-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+  }
+}
+
+@layer components {
+  /* Hero button variant */
+  .btn-hero {
+    @apply bg-primary hover:bg-primary-glow text-primary-foreground;
+    @apply shadow-glow transition-all duration-300;
+    @apply hover:scale-105 hover:shadow-lg;
+  }
+
+  /* Luxury card */
+  .card-luxury {
+    @apply bg-card border-border rounded-lg overflow-hidden;
+    box-shadow: var(--shadow-card);
+    @apply transition-all duration-300 hover:shadow-elegant;
+  }
+
+  /* Hover effects */
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-elegant;
+  }
+
+  /* Section overlay */
+  .section-overlay {
+    @apply absolute inset-0 bg-gradient-to-b from-black/50 to-black/30;
+  }
+
+  /* Wave divider */
+  .wave-divider {
+    position: relative;
+    height: 80px;
+    overflow: hidden;
+  }
+
+  .wave-divider svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@layer utilities {
+  /* Text gradients */
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Animation delays */
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 300ms;
   }
 }
