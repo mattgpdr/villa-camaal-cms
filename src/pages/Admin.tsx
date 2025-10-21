@@ -7,6 +7,13 @@ import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { LogOut } from 'lucide-react';
+import { AppearanceManager } from '@/components/admin/AppearanceManager';
+import { ContentManager } from '@/components/admin/ContentManager';
+import { GalleryManager } from '@/components/admin/GalleryManager';
+import { ActivityManager } from '@/components/admin/ActivityManager';
+import { AmenityManager } from '@/components/admin/AmenityManager';
+import { LearnMoreManager } from '@/components/admin/LearnMoreManager';
+import { TermsManager } from '@/components/admin/TermsManager';
 
 export default function Admin() {
   const navigate = useNavigate();
@@ -190,87 +197,42 @@ export default function Admin() {
 
       <main className="container mx-auto px-4 py-8">
         <Tabs defaultValue="appearance" className="space-y-8">
-          <TabsList className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+          <TabsList className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2">
             <TabsTrigger value="appearance">Apparence</TabsTrigger>
-            <TabsTrigger value="minihero">Mini Hero</TabsTrigger>
-            <TabsTrigger value="learnmore">En savoir plus</TabsTrigger>
+            <TabsTrigger value="content">Contenu</TabsTrigger>
             <TabsTrigger value="gallery">Galerie</TabsTrigger>
             <TabsTrigger value="activities">Activités</TabsTrigger>
             <TabsTrigger value="amenities">Équipements</TabsTrigger>
-            <TabsTrigger value="location">Localisation</TabsTrigger>
-            <TabsTrigger value="footer">Footer</TabsTrigger>
+            <TabsTrigger value="learnmore">En savoir plus</TabsTrigger>
             <TabsTrigger value="terms">Conditions</TabsTrigger>
-            <TabsTrigger value="backgrounds">Backgrounds</TabsTrigger>
           </TabsList>
 
           <TabsContent value="appearance">
-            <div className="card-luxury p-6">
-              <h2 className="text-2xl font-primary font-bold mb-4">Gestion de l'apparence</h2>
-              <p className="text-muted-foreground">Manager à implémenter</p>
-            </div>
+            <AppearanceManager />
           </TabsContent>
 
-          <TabsContent value="minihero">
-            <div className="card-luxury p-6">
-              <h2 className="text-2xl font-primary font-bold mb-4">Gestion du Mini Hero</h2>
-              <p className="text-muted-foreground">Manager à implémenter</p>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="learnmore">
-            <div className="card-luxury p-6">
-              <h2 className="text-2xl font-primary font-bold mb-4">Gestion "En savoir plus"</h2>
-              <p className="text-muted-foreground">Manager à implémenter</p>
-            </div>
+          <TabsContent value="content">
+            <ContentManager />
           </TabsContent>
 
           <TabsContent value="gallery">
-            <div className="card-luxury p-6">
-              <h2 className="text-2xl font-primary font-bold mb-4">Gestion de la galerie</h2>
-              <p className="text-muted-foreground">Manager à implémenter</p>
-            </div>
+            <GalleryManager />
           </TabsContent>
 
           <TabsContent value="activities">
-            <div className="card-luxury p-6">
-              <h2 className="text-2xl font-primary font-bold mb-4">Gestion des activités</h2>
-              <p className="text-muted-foreground">Manager à implémenter</p>
-            </div>
+            <ActivityManager />
           </TabsContent>
 
           <TabsContent value="amenities">
-            <div className="card-luxury p-6">
-              <h2 className="text-2xl font-primary font-bold mb-4">Gestion des équipements</h2>
-              <p className="text-muted-foreground">Manager à implémenter</p>
-            </div>
+            <AmenityManager />
           </TabsContent>
 
-          <TabsContent value="location">
-            <div className="card-luxury p-6">
-              <h2 className="text-2xl font-primary font-bold mb-4">Gestion de la localisation</h2>
-              <p className="text-muted-foreground">Manager à implémenter</p>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="footer">
-            <div className="card-luxury p-6">
-              <h2 className="text-2xl font-primary font-bold mb-4">Gestion du footer</h2>
-              <p className="text-muted-foreground">Manager à implémenter</p>
-            </div>
+          <TabsContent value="learnmore">
+            <LearnMoreManager />
           </TabsContent>
 
           <TabsContent value="terms">
-            <div className="card-luxury p-6">
-              <h2 className="text-2xl font-primary font-bold mb-4">Gestion des conditions</h2>
-              <p className="text-muted-foreground">Manager à implémenter</p>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="backgrounds">
-            <div className="card-luxury p-6">
-              <h2 className="text-2xl font-primary font-bold mb-4">Gestion des backgrounds</h2>
-              <p className="text-muted-foreground">Manager à implémenter</p>
-            </div>
+            <TermsManager />
           </TabsContent>
         </Tabs>
       </main>
