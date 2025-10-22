@@ -71,8 +71,17 @@ export function AppearanceManager() {
         .from('site-assets')
         .getPublicUrl(fileName);
 
-      setAppearance({ ...appearance, [field]: data.publicUrl });
-      toast({ title: 'Image uploadée avec succès' });
+      const updatedAppearance = { ...appearance, [field]: data.publicUrl };
+      setAppearance(updatedAppearance);
+
+      // Sauvegarder automatiquement après l'upload
+      const { error: saveError } = await supabase
+        .from('site_appearance')
+        .upsert(updatedAppearance);
+
+      if (saveError) throw saveError;
+
+      toast({ title: 'Image uploadée et sauvegardée avec succès' });
     } catch (error) {
       console.error('Error uploading image:', error);
       toast({ title: "Erreur lors de l'upload", variant: 'destructive' });
