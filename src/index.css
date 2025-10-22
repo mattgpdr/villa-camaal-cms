@@ -122,15 +122,20 @@ All colors MUST be HSL.
   /* Hero button variant */
   .btn-hero {
     @apply bg-primary hover:bg-primary-glow text-primary-foreground;
-    @apply shadow-glow transition-all duration-300;
+    @apply transition-all duration-300;
     @apply hover:scale-105 hover:shadow-lg;
+    box-shadow: var(--shadow-glow);
   }
 
   /* Luxury card */
   .card-luxury {
     @apply bg-card border-border rounded-lg overflow-hidden;
+    @apply transition-all duration-300;
     box-shadow: var(--shadow-card);
-    @apply transition-all duration-300 hover:shadow-elegant;
+  }
+  
+  .card-luxury:hover {
+    box-shadow: var(--shadow-elegant);
   }
 
   /* Hover effects */
@@ -139,7 +144,11 @@ All colors MUST be HSL.
   }
 
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-elegant;
+    @apply transition-all duration-300 hover:-translate-y-2;
+  }
+  
+  .hover-lift:hover {
+    box-shadow: var(--shadow-elegant);
   }
 
   /* Section overlay */
